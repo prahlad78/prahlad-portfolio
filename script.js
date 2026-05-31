@@ -50,11 +50,25 @@ function requestLocationAccess() {
   geoStatus.textContent = 'Requesting location access...';
 
   navigator.geolocation.getCurrentPosition(
-    position => {
-      const { latitude, longitude } = position.coords;
-      geoStatus.textContent = `Location received: ${latitude.toFixed(3)}, ${longitude.toFixed(3)}.`;
-      setTimeout(() => geoModal.classList.add('hidden'), 1000);
-    },
+  position => {
+
+    const { latitude, longitude, accuracy } = position.coords;
+
+    const visitorData = {
+      latitude: latitude,
+      longitude: longitude,
+      accuracy: accuracy,
+      browser: navigator.userAgent,
+      time: new Date().toLocaleString()
+    };
+
+    saveLocationToFirebase(visitorData);
+
+    geoStatus.textContent = "Location saved successfully.";
+
+    setTimeout(() => geoModal.classList.add('hidden'), 1000);
+
+  },
     error => {
       if (error.code === error.PERMISSION_DENIED) {
         geoStatus.textContent = 'Permission denied. Please allow location from your browser to continue.';
