@@ -15,14 +15,6 @@
 </head>
 
 <body>
-  <div class="geo-modal" id="geoModal">
-    <div class="geo-modal-card">
-      <h2><i class="fa-solid fa-location-dot"></i> Location permission</h2>
-      <p>Please allow location access so I can personalize your portfolio experience.</p>
-      <button class="btn primary" id="geoAllowBtn"><i class="fa-solid fa-location-dot"></i> Allow Location</button>
-      <p class="geo-status muted" id="geoStatus">welcome to my portfolio</p>
-    </div>
-  </div>
   <header class="nav">
     <div class="container nav-inner">
       <div class="brand"><img src="img/header icon.png" alt="Prahlad Thakur" class="logo"></div>
@@ -40,7 +32,7 @@
   </header>
 
   <main class="container">
-    <section class="hero reveal" id="home">
+    <section class="hero reveal zoom" id="home">
       <div class="hero-grid">
         <div>
           <span class="badge"><i class="fa-solid fa-laptop-code"></i> Web Developer & UI/UX Designer</span>
@@ -56,7 +48,8 @@
             <a class="btn social" href="mailto:prahladthakur78146@gmail.com" target="_blank" rel="noopener noreferrer">
               <i class="fa-solid fa-envelope"></i><span>Email</span>
             </a>
-            <a class="btn social" href="https://www.linkedin.com/in/prahlad-thakur/" target="_blank" rel="noopener noreferrer">
+            <a class="btn social" href="https://www.linkedin.com/in/prahlad-thakur/" target="_blank"
+              rel="noopener noreferrer">
               <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
             </a>
           </div>
@@ -69,7 +62,7 @@
       </div>
     </section>
 
-    <section id="about" class="reveal">
+    <section id="about" class="reveal fade-up">
       <div class="section-card">
         <h2 class="section-title"><i class="fa-solid fa-user"></i> About Me</h2>
         <p class="muted">
@@ -80,7 +73,7 @@
       </div>
     </section>
 
-    <section id="skills" class="reveal">
+    <section id="skills" class="reveal slide-right">
       <div class="section-card">
         <h2 class="section-title"><i class="fa-solid fa-code"></i> Skills</h2>
         <p class="muted">Click on each skill to see the description.</p>
@@ -138,7 +131,7 @@
       </div>
     </section>
 
-    <section id="experience" class="reveal">
+    <section id="experience" class="reveal slide-left">
       <div class="section-card">
         <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
         <div class="grid-2">
@@ -158,33 +151,47 @@
       </div>
     </section>
 
-    <section id="projects" class="reveal">
+    <section id="projects" class="reveal fade-up">
       <div class="section-card">
         <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Projects</h2>
-        <div class="grid-3">
-          <div class="project">
+        <p class="muted">My recent projects are organized here so I can add new work easily as I build more websites and
+          apps.</p>
+        <div class="grid-3 project-grid">
+          <a href="https://prahlad78.github.io/thaukurbicycle/" class="project project-link reveal slide-right" target="_blank" rel="noopener noreferrer">
             <h3><i class="fa-solid fa-bicycle"></i> Thakur Bicycle Website</h3>
-            <p class="muted">I developed a responsive business website for Thakur Bicycle to promote bicycle products,
-              services, and company details in a clean and mobile-friendly layout. The website uses HTML5 and CSS3 with
-              a focus on clear navigation, modern sections, and user-friendly presentation.</p>
-          </div>
-          <div class="project">
-            <h3><i class="fa-solid fa-store"></i> Business Web Design Projects</h3>
-            <p class="muted">I worked on responsive website designs for local business needs, focusing on attractive
-              home sections, service blocks, and contact areas. These projects helped me practice website structure,
-              visual hierarchy, and cross-device compatibility.</p>
-          </div>
-          <div class="project">
-            <h3><i class="fa-solid fa-palette"></i> UI Design and Creative Work</h3>
-            <p class="muted">I have experience creating banners, logos, and promotional graphics using design tools like
-              Canva and CorelDRAW. This work strengthened my creativity, visual communication, and ability to support
-              websites with quality graphics.</p>
-          </div>
+            <p class="muted">A responsive business website for Thakur Bicycle, showcasing products, services, and
+              company information in a modern layout.</p>
+          </a>
+          <a href="https://prahlad78.github.io/prahlad-portfolio/" class="project project-link reveal slide-left" target="_blank" rel="noopener noreferrer">
+            <h3><i class="fa-solid fa-user-gear"></i> Prahlad Portfolio</h3>
+            <p class="muted">A personal portfolio website built with HTML, CSS, and JavaScript to display skills,
+              projects, and contact details in a polished design.</p>
+          </a>
+          <a href="#" class="project project-link reveal slide-up" target="_blank" rel="noopener noreferrer">
+            <h3><i class="fa-solid fa-utensils"></i> Modern Restaurant Landing Page</h3>
+            <p class="muted">A landing page for a restaurant with an attractive hero section, menu highlights, and
+              reservation-style presentation.</p>
+          </a>
+          <a href="#" class="project project-link reveal slide-down" target="_blank" rel="noopener noreferrer">
+            <h3><i class="fa-solid fa-calculator"></i> Calculator App</h3>
+            <p class="muted">A clean calculator interface with essential arithmetic operations, responsive controls, and
+              a simple user-friendly layout.</p>
+          </a>
+          <a href="#" class="project project-link reveal fade-up" target="_blank" rel="noopener noreferrer">
+            <h3><i class="fa-solid fa-calendar-days"></i> Calendar Interface</h3>
+            <p class="muted">A calendar layout designed to display dates, navigation, and planning details clearly on
+              desktop and mobile.</p>
+          </a>
+          <a href="#" class="project project-link reveal zoom" target="_blank" rel="noopener noreferrer">
+            <h3><i class="fa-solid fa-clock"></i> Clock Widget</h3>
+            <p class="muted">A clock widget project showing time with a clean visual style and a focus on readability
+              and layout.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="education" class="reveal">
+    <section id="education" class="reveal slide-up">
       <div class="section-card">
         <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
         <div class="grid-2">
@@ -208,19 +215,22 @@
       </div>
     </section>
 
-    <section id="cv" class="reveal">
+    <section id="cv" class="reveal zoom">
       <div class="section-card cv-section">
         <h2 class="section-title"><i class="fa-solid fa-file-pdf"></i> Download My CV</h2>
         <p class="muted">Get a detailed overview of my qualifications, skills, and experience.</p>
         <div class="cv-download">
           <a href="img/Prahlad(CV).png" class="btn primary" download>
-            <i class="fa-solid fa-download"></i> Download CV (PDF)
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+          <a href="img/Prahlad(CV).png" class="btn secondary" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-eye"></i> View CV
           </a>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="reveal">
+    <section id="contact" class="reveal fade-down">
       <div class="section-card">
         <h2 class="section-title"><i class="fa-solid fa-envelope"></i> Contact</h2>
         <div class="contact">
@@ -233,7 +243,8 @@
           </div>
           <div class="item">
             <h3><i class="fa-solid fa-circle-check"></i> Availability</h3>
-            <p class="muted">Open for internship, junior web design roles, and freelance website projects.</p>
+            <p class="muted">Open for internship, junior web developer and UI/UX designer roles, and freelance website
+              projects.</p>
           </div>
           <div class="item">
             <h3><i class="fa-brands fa-github"></i> Connect on GitHub</h3>
@@ -248,28 +259,6 @@
   <footer>
     © 2026 Prahlad Thakur. All rights reserved.
   </footer>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBr6gG5RFm3Xe5PnR1D3V-c1CgmQ6ONd0w",
-      authDomain: "prahlad-portfolio-bdeef.firebaseapp.com",
-      databaseURL: "https://prahlad-portfolio-bdeef-default-rtdb.firebaseio.com",
-      projectId: "prahlad-portfolio-bdeef",
-      storageBucket: "prahlad-portfolio-bdeef.firebasestorage.app",
-      messagingSenderId: "840897312637",
-      appId: "1:840897312637:web:e667430baea78d9cab3e14"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-
-    window.saveLocationToFirebase = function (data) {
-      push(ref(db, "visitors"), data);
-    };
-  </script>
 
   <script src="script.js"></script>
 </body>
