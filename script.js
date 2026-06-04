@@ -14,9 +14,7 @@ document.querySelectorAll('#navLinks a').forEach(link => {
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
+    entry.target.classList.toggle('show', entry.isIntersecting);
   });
 }, { threshold: 0.15 });
 
@@ -36,56 +34,3 @@ document.querySelectorAll('.skill-btn').forEach(btn => {
     }
   });
 });
-
-const geoModal = document.getElementById('geoModal');
-const geoAllowBtn = document.getElementById('geoAllowBtn');
-const geoStatus = document.getElementById('geoStatus');
-
-function requestLocationAccess() {
-  if (!navigator.geolocation) {
-    geoStatus.textContent = 'Your browser does not support geolocation.';
-    return;
-  }
-
-  geoStatus.textContent = 'Requesting location access...';
-
-  navigator.geolocation.getCurrentPosition(
-  position => {
-
-    const { latitude, longitude, accuracy } = position.coords;
-
-    const visitorData = {
-      latitude: latitude,
-      longitude: longitude,
-      accuracy: accuracy,
-      browser: navigator.userAgent,
-      time: new Date().toLocaleString()
-    };
-
-    saveLocationToFirebase(visitorData);
-
-    geoStatus.textContent = "Location saved successfully.";
-
-    setTimeout(() => geoModal.classList.add('hidden'), 1000);
-
-  },
-    error => {
-      if (error.code === error.PERMISSION_DENIED) {
-        geoStatus.textContent = 'Permission denied. Please allow location from your browser to continue.';
-      } else if (error.code === error.POSITION_UNAVAILABLE) {
-        geoStatus.textContent = 'Location unavailable. Please try again.';
-      } else if (error.code === error.TIMEOUT) {
-        geoStatus.textContent = 'Location request timed out. Please try again.';
-      } else {
-        geoStatus.textContent = 'Unable to get location right now.';
-      }
-    },
-    {
-      enableHighAccuracy: true,
-      timeout: 10000,
-      maximumAge: 0
-    }
-  );
-}
-
-geoAllowBtn.addEventListener('click', requestLocationAccess);
