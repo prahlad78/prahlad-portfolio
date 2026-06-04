@@ -252,47 +252,6 @@ img {
     font-size: 13px;
 }
 
-.geo-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 250;
-    display: grid;
-    place-items: center;
-    background: rgba(0, 0, 0, .72);
-    padding: 20px;
-}
-
-.geo-modal.hidden {
-    display: none;
-}
-
-.geo-modal-card {
-    width: min(440px, 100%);
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 32px 26px;
-    text-align: center;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, .28);
-}
-
-.geo-modal-card h2 {
-    margin: 0 0 12px;
-    font-size: 24px;
-}
-
-.geo-modal-card p {
-    color: var(--muted);
-    line-height: 1.7;
-    margin: 0 0 20px;
-}
-
-.geo-status {
-    font-size: 14px;
-    opacity: .88;
-    margin-top: 14px;
-}
-
 .lead {
     color: var(--muted);
     font-size: 17px;
@@ -493,6 +452,60 @@ section {
     padding: 18px;
 }
 
+.project-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    transition: transform .75s ease, opacity .75s ease;
+    will-change: transform, opacity;
+}
+
+.project-link:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.project-link.show {
+    opacity: 1;
+    transform: translate(0,0) scale(1);
+}
+
+.project-link.slide-right {
+    transform: translateX(40px) scale(0.96);
+}
+
+.project-link.slide-left {
+    transform: translateX(-40px) scale(0.96);
+}
+
+.project-link.slide-up {
+    transform: translateY(40px) scale(0.96);
+}
+
+.project-link.slide-down {
+    transform: translateY(-40px) scale(0.96);
+}
+
+.project-link.fade-up {
+    transform: translateY(20px) scale(0.96);
+}
+
+.project-link.zoom {
+    transform: translateY(10px) scale(0.85);
+}
+
+.project-link.show.slide-right,
+.project-link.show.slide-left,
+.project-link.show.slide-up,
+.project-link.show.slide-down,
+.project-link.show.fade-up,
+.project-link.show.zoom {
+    opacity: 1;
+    transform: translate(0,0) scale(1);
+}
+
 .item h3,
 .project h3,
 .timeline h3 {
@@ -580,6 +593,24 @@ section {
 
 .cv-download {
     margin-top: 26px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.cv-download .btn {
+    min-width: 180px;
+}
+
+.btn.secondary {
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .16);
+}
+
+.btn.secondary:hover {
+    background: rgba(255, 215, 0, .12);
 }
 
 .social-link {
@@ -601,13 +632,41 @@ footer {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(40px) scale(.96);
     transition: all .8s ease;
+}
+
+.reveal.zoom {
+    transform: translateY(20px) scale(0.82);
+}
+
+.reveal.slide-right {
+    transform: translateX(40px) scale(.96);
+}
+
+.reveal.slide-left {
+    transform: translateX(-40px) scale(.96);
+}
+
+.reveal.slide-up {
+    transform: translateY(40px) scale(.96);
+}
+
+.reveal.slide-down {
+    transform: translateY(-40px) scale(.96);
+}
+
+.reveal.fade-up {
+    transform: translateY(25px) scale(.98);
+}
+
+.reveal.fade-down {
+    transform: translateY(-25px) scale(.98);
 }
 
 .reveal.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0, 0) scale(1);
 }
 
 .pop {
